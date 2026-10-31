@@ -55,7 +55,7 @@ export default function EnquiryForm({ slug, subject }) {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="grid gap-4 rounded-3xl bg-white p-6 shadow-card sm:p-8">
+    <form onSubmit={onSubmit} noValidate className="grid gap-4 rounded-3xl border-2 border-ink bg-white p-6 shadow-pop sm:p-8">
       <div>
         <label htmlFor="name" className="label">Your name *</label>
         <input id="name" name="name" required autoComplete="name" className="field" />

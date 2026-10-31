@@ -7,37 +7,50 @@ html {
 }
 
 body {
-  background: #fffdf8;
-  color: #2b2118;
+  background: #fbf1e1;
+  color: #241508;
 }
 
 @layer components {
   .wrap {
     @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
   }
+
+  /* Pill buttons with the thick hand-drawn outline used across the reference site. */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition duration-200 active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink px-6 py-3 text-sm font-bold transition duration-150 active:translate-y-0.5 active:shadow-none;
   }
   .btn-primary {
-    @apply btn bg-ink text-cream hover:bg-cocoa;
+    @apply btn bg-terracotta text-paper shadow-pop hover:bg-terracottaDark;
   }
   .btn-whatsapp {
-    @apply btn bg-[#25d366] text-white hover:bg-[#1fb857];
+    @apply btn border-ink bg-[#1f9e52] text-white shadow-pop hover:bg-[#1a8746];
   }
   .btn-ghost {
-    @apply btn border-2 border-ink/80 text-ink hover:bg-peach;
+    @apply btn bg-paper text-ink shadow-pop hover:bg-peach;
   }
+
+  /* White "sticker" card with a thick outline and a flat drop shadow. */
+  .card {
+    @apply rounded-3xl border-2 border-ink bg-paper shadow-card;
+  }
+
   .eyebrow {
-    @apply font-hand text-2xl text-apricot;
+    @apply font-hand text-2xl text-terracotta;
   }
   .h-display {
     @apply font-display font-bold leading-tight tracking-tight text-ink;
   }
   .field {
-    @apply w-full rounded-2xl border-2 border-cocoa/20 bg-white px-4 py-3 text-base outline-none transition focus:border-apricot;
+    @apply w-full rounded-2xl border-2 border-ink/70 bg-paper px-4 py-3 text-base outline-none transition focus:border-terracotta;
   }
   .label {
     @apply mb-1 block text-sm font-bold text-cocoa;
+  }
+
+  /* Badge pill, e.g. "Available" / "gone home ♥". */
+  .tag {
+    @apply inline-flex items-center gap-1 rounded-full border-2 border-ink bg-paper px-3 py-1 text-xs font-bold text-ink;
   }
 }
 
@@ -54,6 +67,35 @@ details > summary {
 }
 details > summary::-webkit-details-marker {
   display: none;
+}
+
+/* Scalloped divider: a row of soft semicircle bumps, used wherever the
+   reference site breaks a section with a wavy/scalloped edge. */
+.scallop-top {
+  background-image: radial-gradient(circle at 16px -8px, transparent 15px, var(--scallop-color, #fffaf0) 16px);
+  background-size: 32px 32px;
+  background-repeat: repeat-x;
+  background-position: center top;
+}
+.scallop-bottom {
+  background-image: radial-gradient(circle at 16px 24px, transparent 15px, var(--scallop-color, #fffaf0) 16px);
+  background-size: 32px 32px;
+  background-repeat: repeat-x;
+  background-position: center bottom;
+}
+
+/* Faint diamond texture used on the footer / dark sections. */
+.diamond-bg {
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.035) 75%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.035) 75%);
+  background-size: 36px 36px;
+  background-position: 0 0, 18px 18px;
+}
+
+/* Polaroid-style photo frame used on the Happy families wall. */
+.polaroid {
+  @apply rounded-sm border-2 border-ink bg-paper p-2 pb-6 shadow-pop;
 }
 
 @keyframes fadeUp {

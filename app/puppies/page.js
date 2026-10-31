@@ -38,7 +38,7 @@ export default function PuppiesPage() {
         <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {GONE_HOME.slice(0, 5).map((p) => (
             <li key={p.slug}>
-              <Link href={`/puppies/${p.slug}`} className="group block overflow-hidden rounded-3xl bg-white shadow-card">
+              <Link href={`/puppies/${p.slug}`} className="group block overflow-hidden rounded-3xl border-2 border-ink bg-white shadow-pop">
                 <div className="relative aspect-square overflow-hidden">
                   <Img src={media(p.image, 384)} alt={`${p.name || p.breed}, ${p.gender} ${p.breed} puppy`} className="h-full w-full object-cover grayscale-[30%] transition group-hover:grayscale-0" />
                   <span className="absolute left-2 top-2 rounded-full bg-blush px-3 py-1 text-xs font-bold">gone home ♥</span>

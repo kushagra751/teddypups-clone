@@ -28,7 +28,7 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/puppies" className="btn-primary">View available puppies</Link>
-              <a href={wa()} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">Enquire on WhatsApp</a>
+              <a href={wa()} target="_blank" rel="noopener noreferrer" className="btn-ghost">Enquire on WhatsApp</a>
             </div>
             <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-1 font-hand text-2xl text-cocoa/80" aria-label="Featured pups">
               {PUPPIES.slice(0, 6).map((p) => (
@@ -73,7 +73,7 @@ export default function HomePage() {
       <section className="wrap mt-24">
         <h2 className="h-display text-center text-4xl">Two ways to meet your puppy</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          <article className="overflow-hidden rounded-[2rem] bg-white shadow-card">
+          <article className="card overflow-hidden">
             <Img
               src={media(SHOWROOM_IMAGES[0], 1080)}
               alt="A tiny apricot teddy bear puppy held up in the TeddyPups showroom"
@@ -89,7 +89,7 @@ export default function HomePage() {
             </div>
           </article>
 
-          <article className="flex flex-col overflow-hidden rounded-[2rem] bg-ink text-cream shadow-card">
+          <article className="flex flex-col overflow-hidden rounded-3xl border-2 border-ink bg-espresso text-cream shadow-pop">
             <div className="flex h-72 items-center justify-center bg-gradient-to-br from-cocoa to-ink">
               <p className="font-hand text-5xl text-apricot">Korea ✈ Dubai</p>
             </div>
@@ -132,7 +132,7 @@ export default function HomePage() {
         </div>
 
         {/* WhatsApp chat mock */}
-        <div className="rounded-[2rem] bg-sage p-5 shadow-card">
+        <div className="rounded-3xl border-2 border-ink bg-sage p-5 shadow-pop">
           <div className="flex items-center gap-3 rounded-2xl bg-[#075e54] px-4 py-3 text-white">
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-xl">🧸</span>
             <div>
@@ -174,13 +174,13 @@ export default function HomePage() {
       </section>
 
       {/* TRUST */}
-      <section className="mt-24 bg-peach/50 py-16">
+      <section className="mt-24 bg-umber py-16 text-cream">
         <div className="wrap">
-          <p className="eyebrow">puppy passport</p>
-          <h2 className="h-display text-4xl">Why families trust TeddyPups</h2>
+          <p className="font-hand text-2xl text-[#f0c994]">puppy passport</p>
+          <h2 className="h-display text-4xl text-cream">Why families trust TeddyPups</h2>
           <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {TRUST.map((t) => (
-              <li key={t.title} className="rounded-3xl bg-white p-6 shadow-card">
+              <li key={t.title} className="card p-6">
                 <h3 className="font-display text-lg font-bold">{t.title}</h3>
                 <p className="mt-2 text-sm text-cocoa">{t.text}</p>
               </li>
@@ -196,15 +196,16 @@ export default function HomePage() {
           We are truly honored to see our puppies become cherished members of loving families. These heartwarming
           moments have been shared by our valued clients who welcomed a Teddy Pup into their homes and hearts.
         </p>
-        <figure className="mt-8 rounded-[2rem] bg-ink p-8 text-cream sm:p-10">
+        <figure className="card relative mt-8 max-w-xl -rotate-1 p-7 sm:p-9">
+          <span aria-hidden="true" className="absolute -top-3 left-10 h-6 w-16 -rotate-6 rounded-sm bg-peach/80" />
           <blockquote className="font-display text-xl leading-relaxed sm:text-2xl">“{TESTIMONIAL.quote}”</blockquote>
-          <figcaption className="mt-4 font-hand text-2xl text-apricot">{TESTIMONIAL.author}</figcaption>
+          <figcaption className="mt-4 font-hand text-2xl text-terracotta">{TESTIMONIAL.author}</figcaption>
         </figure>
-        <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {FAMILY_PHOTOS.slice(0, 8).map((f) => (
-            <li key={f.image} className="overflow-hidden rounded-3xl bg-white shadow-card">
+        <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-4">
+          {FAMILY_PHOTOS.slice(0, 8).map((f, idx) => (
+            <li key={f.image} className={`polaroid ${idx % 2 === 0 ? "-rotate-1" : "rotate-1"} transition hover:rotate-0`}>
               <Img src={media(f.image, 640)} alt="A happy TeddyPups family with their new puppy" className="aspect-square w-full object-cover" />
-              {f.caption && <p className="p-3 text-sm font-semibold text-cocoa">{f.caption}</p>}
+              {f.caption && <p className="mt-2 text-center font-hand text-lg text-cocoa">{f.caption}</p>}
             </li>
           ))}
         </ul>
@@ -225,17 +226,17 @@ export default function HomePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="wrap mt-24">
-        <div className="grid items-center gap-8 overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-apricot to-blush p-8 sm:p-12 md:grid-cols-[1.2fr_0.8fr]">
+      <section className="mt-24 bg-espresso py-16 text-cream">
+        <div className="wrap grid items-center gap-8 md:grid-cols-[1.2fr_0.8fr]">
           <div>
-            <h2 className="h-display text-4xl">Ready to meet your new best friend?</h2>
-            <p className="mt-4 max-w-lg text-ink/80">
+            <h2 className="h-display text-4xl text-cream">Ready to meet your new best friend?</h2>
+            <p className="mt-4 max-w-lg text-cream/80">
               Bring home a healthy, happy teacup or designer puppy with expert guidance every step of the way. We help
               you find the right match and ensure a smooth, safe delivery across the UAE.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href={wa()} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">Enquire on WhatsApp</a>
-              <Link href="/contact" className="btn-primary">Visit &amp; contact</Link>
+              <Link href="/contact" className="btn bg-paper text-ink shadow-pop hover:bg-peach">Visit &amp; contact</Link>
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-xs">
@@ -249,8 +250,9 @@ export default function HomePage() {
             </span>
           </div>
         </div>
-        <p className="mt-6 text-center text-sm text-cocoa">
-          {GONE_HOME.length}+ puppies have already found their families. <Link href="/gone-home" className="font-bold underline">See who went home</Link>
+        <p className="wrap mt-6 text-center text-sm text-cream/80">
+          {GONE_HOME.length}+ puppies have already found their families.{" "}
+          <Link href="/gone-home" className="font-bold text-[#f0c994] underline">See who went home</Link>
         </p>
       </section>
     </>

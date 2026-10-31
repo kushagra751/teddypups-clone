@@ -4,12 +4,12 @@ export default function FaqList({ items }) {
     <ul className="space-y-3">
       {items.map((f) => (
         <li key={f.q}>
-          <details className="group rounded-3xl bg-white p-5 shadow-card open:bg-peach/60 sm:p-6">
+          <details className="card group p-5 open:bg-peach/60 sm:p-6">
             <summary className="flex cursor-pointer items-start justify-between gap-4 font-display text-lg font-bold">
               <span>{f.q}</span>
               <span
                 aria-hidden="true"
-                className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ink text-cream transition group-open:rotate-45"
+                className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-terracotta text-paper transition group-open:rotate-45"
               >
                 +
               </span>

@@ -56,7 +56,7 @@ export default function ContactForm() {
     <form
       onSubmit={onSubmit}
       noValidate
-      className="rounded-[2rem] border-2 border-dashed border-cocoa/30 bg-white p-6 shadow-card sm:p-10"
+      className="rounded-[2rem] border-2 border-dashed border-ink bg-white p-6 shadow-pop sm:p-10"
     >
       <p className="font-hand text-4xl text-cocoa">Dear TeddyPups,</p>
 

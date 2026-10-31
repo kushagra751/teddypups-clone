@@ -2,36 +2,33 @@ import Link from "next/link";
 import Img from "@/components/Img";
 import { media, puppyTitle, puppySub } from "@/lib/data";
 
-export default function PuppyCard({ puppy, index }) {
+const ACCENTS = ["✦", "🐾", "♥"];
+
+export default function PuppyCard({ puppy, index = 0 }) {
+  const accent = ACCENTS[index % ACCENTS.length];
   return (
-    <Link
-      href={`/puppies/${puppy.slug}`}
-      className="group block overflow-hidden rounded-3xl bg-white shadow-card transition duration-300 hover:-translate-y-1"
-    >
-      <div className="relative aspect-[4/5] overflow-hidden bg-peach">
-        <Img
-          src={media(puppy.images[0], 640)}
-          alt={`${puppyTitle(puppy)}, ${puppy.gender} ${puppy.breed} puppy`}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-        />
-        <span className="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1 text-xs font-bold text-cocoa">
-          Available
+    <Link href={`/puppies/${puppy.slug}`} className="group block text-center">
+      <div className="relative mx-auto aspect-square w-full max-w-[220px]">
+        <span
+          aria-hidden="true"
+          className="absolute -left-1 top-2 text-lg text-terracotta transition group-hover:scale-125"
+        >
+          {accent}
         </span>
+        <div className="h-full w-full overflow-hidden rounded-full border-2 border-ink bg-peach shadow-pop transition duration-300 group-hover:-translate-y-1">
+          <Img
+            src={media(puppy.images[0], 480)}
+            alt={`${puppyTitle(puppy)}, ${puppy.gender} ${puppy.breed} puppy`}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+          />
+        </div>
+        <span className="tag absolute -right-1 top-1 bg-paper">Available</span>
         {puppy.video && (
-          <span className="absolute right-3 top-3 rounded-full bg-ink/85 px-3 py-1 text-xs font-bold text-cream">
-            ▶ video
-          </span>
-        )}
-        {typeof index === "number" && (
-          <span className="absolute bottom-3 left-3 font-hand text-3xl text-white drop-shadow">
-            {String(index + 1).padStart(2, "0")}
-          </span>
+          <span className="tag absolute bottom-1 left-1/2 -translate-x-1/2 bg-ink text-paper">▶ video</span>
         )}
       </div>
-      <div className="p-4">
-        <h3 className="font-display text-lg font-bold leading-snug">{puppyTitle(puppy)}</h3>
-        <p className="mt-1 text-sm text-cocoa">{puppySub(puppy)}</p>
-      </div>
+      <h3 className="mt-3 font-display text-lg font-bold leading-snug">{puppyTitle(puppy)}</h3>
+      <p className="text-sm text-cocoa">{puppySub(puppy)}</p>
     </Link>
   );
 }

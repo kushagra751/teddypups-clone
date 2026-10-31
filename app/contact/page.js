@@ -23,7 +23,7 @@ export default function ContactPage() {
           <a href={wa()} target="_blank" rel="noopener noreferrer" className="btn-whatsapp w-full">
             WhatsApp {SITE.phone}
           </a>
-          <div className="rounded-3xl bg-white p-6 shadow-card">
+          <div className="rounded-3xl border-2 border-ink bg-white p-6 shadow-pop">
             <p className="font-hand text-2xl text-apricot">call us</p>
             <a href={SITE.phoneHref} className="font-display text-xl font-bold hover:underline">{SITE.phone}</a>
             <p className="mt-5 font-hand text-2xl text-apricot">email</p>

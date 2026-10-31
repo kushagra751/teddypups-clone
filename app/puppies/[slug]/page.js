@@ -117,7 +117,7 @@ export default async function PuppyPage({ params }) {
 
           <dl className="mt-8 grid grid-cols-2 gap-3">
             {specs.map(([k, v]) => (
-              <div key={k} className="rounded-2xl bg-white p-4 shadow-card">
+              <div key={k} className="rounded-2xl border-2 border-ink bg-white p-4 shadow-pop">
                 <dt className="text-xs font-bold uppercase tracking-wide text-cocoa/70">{k}</dt>
                 <dd className="mt-1 font-display text-lg font-bold">{v}</dd>
               </div>
@@ -142,7 +142,7 @@ export default async function PuppyPage({ params }) {
         <h2 className="h-display mt-1 text-3xl">Every Teddy Pup comes</h2>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           {INCLUDED.map((i) => (
-            <li key={i} className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-card">
+            <li key={i} className="flex items-start gap-3 rounded-2xl border-2 border-ink bg-white p-4 shadow-pop">
               <span aria-hidden="true" className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-apricot text-sm font-bold">✓</span>
               {i}
             </li>
@@ -181,7 +181,7 @@ export default async function PuppyPage({ params }) {
           { p: prev, label: "Previous pup" },
           { p: next, label: "Next pup" },
         ].map(({ p, label }) => (
-          <Link key={label} href={`/puppies/${p.slug}`} className="flex items-center gap-4 rounded-3xl bg-white p-3 shadow-card transition hover:-translate-y-0.5">
+          <Link key={label} href={`/puppies/${p.slug}`} className="flex items-center gap-4 rounded-3xl border-2 border-ink bg-white p-3 shadow-pop transition hover:-translate-y-0.5">
             <Img src={media(p.images[0], 384)} alt="" className="h-20 w-20 rounded-2xl object-cover" />
             <span>
               <span className="block text-xs font-bold uppercase tracking-wide text-cocoa/70">{label}</span>

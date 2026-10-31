@@ -69,7 +69,7 @@ function Cards({ items, cols = "sm:grid-cols-2" }) {
   return (
     <ul className={`mt-8 grid gap-4 ${cols}`}>
       {items.map((i) => (
-        <li key={i.t} className="rounded-3xl bg-white p-6 shadow-card">
+        <li key={i.t} className="rounded-3xl border-2 border-ink bg-white p-6 shadow-pop">
           <h3 className="font-display text-xl font-bold">{i.t}</h3>
           <p className="mt-2 text-cocoa">{i.d}</p>
         </li>
@@ -112,7 +112,7 @@ export default function HowItWorksPage() {
             <Steps steps={LOCAL_STEPS} />
           </article>
 
-          <article className="rounded-[2rem] bg-white p-7 shadow-card">
+          <article className="rounded-3xl border-2 border-ink bg-white p-7 shadow-pop">
             <p className="font-hand text-2xl text-apricot">Imported · order upon request</p>
             <h3 className="font-display text-2xl font-bold">Order upon request</h3>
             <p className="mt-3 text-cocoa">

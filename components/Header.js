@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { NAV, SITE, LOGO, wa } from "@/lib/data";
+import Scallop from "@/components/Scallop";
 
 export default function Header() {
   const pathname = usePathname();
@@ -31,11 +32,11 @@ export default function Header() {
       >
         Skip to content
       </a>
-      <header className="sticky top-0 z-40 border-b border-cocoa/10 bg-cream/90 backdrop-blur">
+      <header className="sticky top-0 z-40 bg-paper">
         <div className="wrap flex h-16 items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-2 font-display text-xl font-bold">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={LOGO} alt="" width="36" height="36" className="h-9 w-9 object-contain" />
+            <img src={LOGO} alt="" width="36" height="36" className="h-9 w-9 rounded-full border-2 border-ink object-contain" />
             {SITE.short}
           </Link>
 
@@ -64,10 +65,11 @@ export default function Header() {
               aria-expanded={open}
               aria-controls="mobile-menu"
             >
-              Menu
+              <span aria-hidden="true">🐾</span> Menu
             </button>
           </div>
         </div>
+        <Scallop color="#fffaf0" flip />
       </header>
 
       {open && (
