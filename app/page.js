@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Img from "@/components/Img";
-import HeroSlider from "@/components/HeroSlider";
+import HeroArchStrip from "@/components/HeroArchStrip";
 import PuppyCard from "@/components/PuppyCard";
 import FaqList from "@/components/FaqList";
 import {
   PUPPIES, GONE_HOME, FAMILY_PHOTOS, SHOWROOM_IMAGES, TESTIMONIAL, JOURNEY, TRUST, FAQS, BREEDS,
-  media, wa, puppyTitle,
+  media, wa,
 } from "@/lib/data";
 
 export default function HomePage() {
@@ -16,29 +16,22 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section className="overflow-hidden bg-gradient-to-b from-peach/70 to-cream">
-        <div className="wrap grid items-center gap-12 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:py-20">
-          <div className="fade-up">
+        <div className="wrap py-14 text-center lg:py-20">
+          <div className="fade-up mx-auto max-w-2xl">
             <p className="eyebrow">{`every puppy is family`}</p>
             <h1 className="h-display mt-2 text-5xl sm:text-6xl lg:text-7xl">
-              Premium teacup <span className="text-apricot">puppies</span> in Dubai
+              Premium teacup <span className="text-terracotta">puppies</span> in Dubai
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-cocoa">
+            <p className="mx-auto mt-6 max-w-xl text-lg text-cocoa">
               Meet your new best friend in our Dubai showroom, or order a rare miniature breed from trusted breeders
               worldwide.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Link href="/puppies" className="btn-primary">View available puppies</Link>
               <a href={wa()} target="_blank" rel="noopener noreferrer" className="btn-ghost">Enquire on WhatsApp</a>
             </div>
-            <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-1 font-hand text-2xl text-cocoa/80" aria-label="Featured pups">
-              {PUPPIES.slice(0, 6).map((p) => (
-                <li key={p.slug}>{puppyTitle(p)}</li>
-              ))}
-            </ul>
           </div>
-          <div className="mx-auto w-full max-w-md">
-            <HeroSlider />
-          </div>
+          <HeroArchStrip />
         </div>
       </section>
 
