@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fffdf8;
+  color: #2b2118;
+}
+
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition duration-200 active:scale-95;
+  }
+  .btn-primary {
+    @apply btn bg-ink text-cream hover:bg-cocoa;
+  }
+  .btn-whatsapp {
+    @apply btn bg-[#25d366] text-white hover:bg-[#1fb857];
+  }
+  .btn-ghost {
+    @apply btn border-2 border-ink/80 text-ink hover:bg-peach;
+  }
+  .eyebrow {
+    @apply font-hand text-2xl text-apricot;
+  }
+  .h-display {
+    @apply font-display font-bold leading-tight tracking-tight text-ink;
+  }
+  .field {
+    @apply w-full rounded-2xl border-2 border-cocoa/20 bg-white px-4 py-3 text-base outline-none transition focus:border-apricot;
+  }
+  .label {
+    @apply mb-1 block text-sm font-bold text-cocoa;
+  }
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fadeUp 0.6s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .fade-up {
+    animation: none;
+  }
+}
