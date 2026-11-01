@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Img from "@/components/Img";
 import HeroArchStrip from "@/components/HeroArchStrip";
+import FlightPath from "@/components/FlightPath";
 import PuppyCard from "@/components/PuppyCard";
 import FaqList from "@/components/FaqList";
 import {
@@ -84,7 +85,7 @@ export default function HomePage() {
 
           <article className="flex flex-col overflow-hidden rounded-3xl border-2 border-ink bg-espresso text-cream shadow-pop">
             <div className="flex h-72 items-center justify-center bg-gradient-to-br from-cocoa to-ink">
-              <p className="font-hand text-5xl text-apricot">Korea ✈ Dubai</p>
+              <FlightPath />
             </div>
             <div className="flex flex-1 flex-col items-start p-7">
               <p className="font-hand text-2xl text-apricot">Imported for you</p>

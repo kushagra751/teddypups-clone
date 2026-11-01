@@ -73,10 +73,10 @@ export default function Header() {
       </header>
 
       {open && (
-        <div id="mobile-menu" className="fixed inset-0 z-50 flex flex-col bg-cream p-6 lg:hidden" role="dialog" aria-modal="true">
+        <div id="mobile-menu" className="fixed inset-0 z-50 flex flex-col bg-[#e8a548] p-6 lg:hidden" role="dialog" aria-modal="true">
           <div className="flex items-center justify-between">
-            <span className="font-hand text-3xl text-apricot">where to, friend?</span>
-            <button type="button" onClick={() => setOpen(false)} className="btn-ghost !py-2">
+            <span className="font-hand text-3xl text-ink">where to, friend?</span>
+            <button type="button" onClick={() => setOpen(false)} className="btn bg-[#e8a548] text-ink shadow-pop">
               Close
             </button>
           </div>
@@ -85,8 +85,8 @@ export default function Header() {
               <Link
                 key={n.href}
                 href={n.href}
-                className={`rounded-2xl px-5 py-4 font-display text-2xl font-bold ${
-                  isActive(n.href) ? "bg-peach" : "hover:bg-peach/60"
+                className={`rounded-2xl px-5 py-4 font-display text-2xl font-bold transition hover:bg-[#f0b26a] ${
+                  isActive(n.href) ? "text-terracotta" : "text-ink"
                 }`}
               >
                 {n.label}
@@ -96,7 +96,7 @@ export default function Header() {
           <a href={wa()} target="_blank" rel="noopener noreferrer" className="btn-whatsapp w-full">
             WhatsApp us
           </a>
-          <a href={SITE.phoneHref} className="mt-3 text-center font-semibold text-cocoa">
+          <a href={SITE.phoneHref} className="mt-3 text-center font-semibold text-ink/70">
             {SITE.phone}
           </a>
         </div>

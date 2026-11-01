@@ -3,6 +3,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppBar from "@/components/WhatsAppBar";
+import PageTransition from "@/components/PageTransition";
+import ScrollMascot from "@/components/ScrollMascot";
 
 const display = Fraunces({ subsets: ["latin"], variable: "--font-display", display: "swap" });
 const hand = Caveat({ subsets: ["latin"], variable: "--font-hand", display: "swap" });
@@ -36,10 +38,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${display.variable} ${hand.variable} ${sans.variable}`}>
       <body className="font-sans antialiased">
+        <PageTransition />
         <Header />
         <main id="main">{children}</main>
         <Footer />
         <WhatsAppBar />
+        <ScrollMascot />
       </body>
     </html>
   );

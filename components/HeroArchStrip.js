@@ -29,8 +29,9 @@ export default function HeroArchStrip() {
 
   return (
     <div className="mt-10">
-      <div className="flex justify-center">
-        <span className="tag max-w-[88vw] truncate bg-paper text-cocoa sm:max-w-xs">{label}</span>
+      <div className="flex items-center justify-center gap-2">
+        <span className="tag bg-paper text-cocoa">hm?</span>
+        <span className="tag max-w-[70vw] truncate bg-paper text-cocoa sm:max-w-xs">{label}</span>
       </div>
       <ul className="mt-4 flex items-end justify-center gap-1.5 sm:gap-2.5">
         {items.map((it) =>

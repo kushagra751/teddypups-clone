@@ -98,6 +98,33 @@ details > summary::-webkit-details-marker {
   @apply rounded-sm border-2 border-ink bg-paper p-2 pb-6 shadow-pop;
 }
 
+/* Gentle running/bobbing bounce for the mascot character. */
+@keyframes mascotBob {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-7px) rotate(3deg); }
+}
+.mascot-bob {
+  animation: mascotBob 1s ease-in-out infinite;
+}
+
+/* The mascot walking left-to-right across the full-screen loading overlay. */
+@keyframes loaderWalk {
+  from { left: -12%; }
+  to { left: 104%; }
+}
+.loader-walk {
+  animation: loaderWalk 0.8s linear forwards, mascotBob 0.3s ease-in-out infinite;
+}
+
+/* The airplane travelling along its dashed flight path (Korea -> Dubai). */
+@keyframes planeFly {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
+}
+.plane-fly {
+  animation: planeFly 3s ease-in-out infinite alternate;
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;

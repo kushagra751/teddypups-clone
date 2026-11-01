@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { wa } from "@/lib/data";
+import FlightPath from "@/components/FlightPath";
 
 export const metadata = {
   title: "How it works",
@@ -125,6 +126,9 @@ export default function HowItWorksPage() {
               puppies to Dubai, just for you.
             </p>
             <p className="mt-3 text-sm font-bold uppercase tracking-wide text-cocoa/70">Europe · Korea → Dubai</p>
+            <div className="mt-4 w-full rounded-2xl border-2 border-ink bg-espresso py-4 text-cream">
+              <FlightPath />
+            </div>
             <Steps steps={IMPORT_STEPS} />
           </article>
         </div>
