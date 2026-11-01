@@ -33,7 +33,7 @@ export default function FaqPage() {
         <div className="mt-10 rounded-[2rem] border-2 border-cream/30 bg-cream/10 p-8 text-center">
           <p className="font-display text-2xl font-bold text-cream">Still wondering?</p>
           <a
-            href={wa("Hi TeddyPups! I have a question: ")}
+            href={wa()}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp mt-4"

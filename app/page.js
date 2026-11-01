@@ -6,7 +6,7 @@ import PuppyCard from "@/components/PuppyCard";
 import FaqList from "@/components/FaqList";
 import {
   PUPPIES, GONE_HOME, FAMILY_PHOTOS, SHOWROOM_IMAGES, TESTIMONIAL, JOURNEY, TRUST, FAQS, BREEDS,
-  media, wa,
+  media, wa, waBreed,
 } from "@/lib/data";
 
 export default function HomePage() {
@@ -136,7 +136,7 @@ export default function HomePage() {
           </div>
           <div className="mt-4 space-y-3 text-sm">
             <p className="ml-auto w-fit max-w-[85%] rounded-2xl rounded-tr-sm bg-[#d9fdd3] px-4 py-2.5">
-              Hi TeddyPups! I&apos;d love to know more about your puppies.
+              Hello! I would love to know more about your available puppies.
             </p>
             <p className="w-fit max-w-[85%] rounded-2xl rounded-tl-sm bg-white px-4 py-2.5">
               Select your preferred breed or tell us what you&apos;re looking for. We&apos;ll guide you based on
@@ -144,13 +144,15 @@ export default function HomePage() {
             </p>
             <div className="flex flex-wrap gap-2">
               {BREEDS.map((b) => (
-                <Link
+                <a
                   key={b.key}
-                  href={`/puppies?breed=${b.key}`}
+                  href={waBreed(b.label)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full bg-white px-4 py-2 font-bold text-cocoa shadow transition hover:bg-peach"
                 >
                   {b.label}
-                </Link>
+                </a>
               ))}
             </div>
             <p className="w-fit max-w-[85%] rounded-2xl rounded-tl-sm bg-white px-4 py-2.5">

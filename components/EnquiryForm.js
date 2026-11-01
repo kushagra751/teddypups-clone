@@ -43,7 +43,7 @@ export default function EnquiryForm({ slug, subject }) {
         <p className="font-hand text-4xl text-cocoa">Thank you!</p>
         <p className="mt-2">Your letter is on its way. Our team will get back to you promptly.</p>
         <a
-          href={wa(`Hi TeddyPups! I just sent an enquiry about ${subject}.`)}
+          href={wa(`Hello! I am interested in ${subject}. Please share more details and available photos.`)}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-whatsapp mt-5"

@@ -5,7 +5,7 @@ import EnquiryForm from "@/components/EnquiryForm";
 import Img from "@/components/Img";
 import {
   PUPPIES, GONE_HOME, INCLUDED, IMPORT_STEPS,
-  findPuppy, findGone, media, wa, puppyTitle,
+  findPuppy, findGone, media, waBreed, waPuppy, puppyTitle,
 } from "@/lib/data";
 
 export function generateStaticParams() {
@@ -70,7 +70,7 @@ export default async function PuppyPage({ params }) {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/puppies" className="btn-primary">See available puppies</Link>
-              <a href={wa(`Hi TeddyPups! I saw ${title} the ${gone.breed} and I'm looking for a puppy like that.`)} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
+              <a href={waBreed(gone.breed)} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
                 Ask on WhatsApp
               </a>
             </div>
@@ -87,7 +87,6 @@ export default async function PuppyPage({ params }) {
   const idx = PUPPIES.findIndex((p) => p.slug === puppy.slug);
   const prev = PUPPIES[(idx - 1 + PUPPIES.length) % PUPPIES.length];
   const next = PUPPIES[(idx + 1) % PUPPIES.length];
-  const pageUrl = `https://puppy.instabizweb.com/puppies/${puppy.slug}`;
 
   const specs = [
     ["Breed", puppy.breed],
@@ -126,7 +125,7 @@ export default async function PuppyPage({ params }) {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href={wa(`Hi TeddyPups! I'm interested in ${subject}: ${pageUrl}`)}
+              href={waPuppy(title, puppy.breed)}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp"

@@ -11,6 +11,7 @@ const hand = Caveat({ subsets: ["latin"], variable: "--font-hand", display: "swa
 const sans = Nunito({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://teddypups-clone.onrender.com"),
   title: {
     default: "TeddyPups U.A.E. — Premium teacup puppies in Dubai",
     template: "%s | TeddyPups U.A.E.",
